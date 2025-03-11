@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id('order_id');
-            $table->foreignId('user_id')->constrained('users','user_id')->onDelete('cascade');
-            $table->foreignId('build_id')->constrained('builds','build_id')->onDelete('cascade');
+            $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('build_id')->constrained('builds')->onDelete('cascade');
             $table->decimal('total_cost', 10, 2);
             $table->enum('status', ['Pending', 'Processing', 'Shipped', 'Delivered', 'Cancelled'])->default('Pending');
             $table->string('payment_method', 50);

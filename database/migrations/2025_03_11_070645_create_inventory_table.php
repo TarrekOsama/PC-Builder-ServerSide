@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('inventory', function (Blueprint $table) {
-            $table->id('inventory_id');
-            $table->enum('component_type', ['cpu', 'motherboard', 'ram', 'storage', 'gpu', 'case', 'psu', 'monitor', 'product']);
+            $table->id();
+            $table->enum('component_type', ['cpu', 'motherboard', 'ram', 'storage', 'gpu', 'ps_case', 'psu', 'monitor', 'product']);
             $table->integer('component_id');
             $table->integer('stock_quantity')->default(0);
             $table->timestamps();

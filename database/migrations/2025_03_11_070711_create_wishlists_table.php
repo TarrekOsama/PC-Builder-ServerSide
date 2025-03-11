@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('wishlists', function (Blueprint $table) {
-            $table->id('wishlist_id');
-            $table->foreignId('user_id')->constrained('users','user_id')->onDelete('cascade');
-            $table->enum('component_type', ['cpu', 'motherboard', 'ram', 'storage', 'gpu', 'case', 'psu', 'monitor', 'product']);
+            $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->enum('component_type', ['cpu', 'motherboard', 'ram', 'storage', 'gpu', 'ps_case', 'psu', 'monitor', 'product']);
             $table->integer('component_id');
             $table->timestamp('created_at')->useCurrent();
         });

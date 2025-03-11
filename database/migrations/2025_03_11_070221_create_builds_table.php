@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('builds', function (Blueprint $table) {
-            $table->id('build_id');
-            $table->foreignId('user_id')->constrained('users','user_id')->onDelete('cascade');
+            $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('name')->nullable();
             $table->decimal('total_cost', 10, 2)->default(0.00);
             $table->integer('total_power_consumption')->default(0);

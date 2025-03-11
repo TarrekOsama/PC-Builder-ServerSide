@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('monitors', function (Blueprint $table) {
-            $table->id('monitor_id');
+            $table->id();
             $table->string('name');
             $table->string('brand', 50);
             $table->decimal('screen_size', 4, 1);

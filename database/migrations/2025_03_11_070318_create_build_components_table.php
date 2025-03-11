@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('build_components', function (Blueprint $table) {
-            $table->id('build_component_id');
-            $table->foreignId('build_id')->constrained('builds','build_id')->onDelete('cascade');
-            $table->enum('component_type', ['cpu', 'motherboard', 'ram', 'storage', 'gpu', 'case', 'psu', 'monitor', 'product']);
+            $table->id();
+            $table->foreignId('build_id')->constrained('builds')->onDelete('cascade');
+            $table->enum('component_type', ['cpu', 'motherboard', 'ram', 'storage', 'gpu', 'ps_case', 'psu', 'monitor', 'product']);
             $table->integer('component_id');
             $table->integer('quantity')->default(1);
             $table->timestamps();
