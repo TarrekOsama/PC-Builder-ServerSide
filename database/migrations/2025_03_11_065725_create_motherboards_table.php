@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('motherboards', function (Blueprint $table) {
-            $table->id('motherboard_id');
+            $table->id();
             $table->string('name');
             $table->string('brand', 50);
             $table->string('socket_type', 20);
             $table->string('form_factor', 10);
-            $table->foreignId('chipset_id')->constrained('chipsets','chipset_id')->onDelete('restrict');
+            $table->foreignId('chipset_id')->constrained('chipsets')->onDelete('restrict');
             $table->string('ram_type', 5);
             $table->integer('ram_slots');
             $table->integer('max_ram_speed');

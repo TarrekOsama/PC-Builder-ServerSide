@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cpu_chipset', function (Blueprint $table) {
-            $table->foreignId('cpu_id')->constrained('cpus','cpu_id')->onDelete('cascade');
-            $table->foreignId('chipset_id')->constrained('chipsets','chipset_id')->onDelete('cascade');
-            $table->primary(['cpu_id', 'chipset_id']);
+            $table->id();
+            $table->foreignId('cpu_id')->constrained('cpus',)->onDelete('cascade');
+            $table->foreignId('chipset_id')->constrained('chipsets',)->onDelete('cascade');
             $table->timestamps();
         });
     }
