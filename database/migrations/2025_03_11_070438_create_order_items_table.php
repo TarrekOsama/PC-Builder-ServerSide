@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('order_items', function (Blueprint $table) {
             $table->id();
             $table->foreignId('order_id')->constrained('orders')->onDelete('cascade');
-            $table->enum('component_type', ['cpu', 'motherboard', 'ram', 'storage', 'gpu', 'ps_case', 'psu', 'monitor', 'product']);
+            $table->enum('component_type', ['cpu', 'motherboard', 'ram', 'storage', 'gpu', 'pc_case', 'psu', 'monitor', 'product']);
             $table->integer('component_id');
             $table->integer('quantity')->default(1);
             $table->decimal('price_at_purchase', 10, 2);
-            $table->timestamp('created_at')->useCurrent();
+            $table->timestamps();
         });
     }
 

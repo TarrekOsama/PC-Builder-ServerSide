@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('wishlists', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->enum('component_type', ['cpu', 'motherboard', 'ram', 'storage', 'gpu', 'ps_case', 'psu', 'monitor', 'product']);
+            $table->enum('component_type', ['cpu', 'motherboard', 'ram', 'storage', 'gpu', 'pc_case', 'psu', 'monitor', 'product']);
             $table->integer('component_id');
-            $table->timestamp('created_at')->useCurrent();
+            $table->timestamps();
         });
     }
 

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->enum('component_type', ['cpu', 'motherboard', 'ram', 'storage', 'gpu', 'ps_case', 'psu', 'monitor', 'product']);
+            $table->enum('component_type', ['cpu', 'motherboard', 'ram', 'storage', 'gpu', 'pc_case', 'psu', 'monitor', 'product']);
             $table->integer('component_id');
             $table->integer('rating')->check('rating BETWEEN 1 AND 5');
             $table->text('comment')->nullable();

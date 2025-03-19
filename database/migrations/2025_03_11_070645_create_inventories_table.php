@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('inventory', function (Blueprint $table) {
+        Schema::create('inventories', function (Blueprint $table) {
             $table->id();
-            $table->enum('component_type', ['cpu', 'motherboard', 'ram', 'storage', 'gpu', 'ps_case', 'psu', 'monitor', 'product']);
+            $table->enum('component_type', ['cpu', 'motherboard', 'ram', 'storage', 'gpu', 'pc_case', 'psu', 'monitor', 'product']);
             $table->integer('component_id');
             $table->integer('stock_quantity')->default(0);
             $table->timestamps();
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('inventory');
+        Schema::dropIfExists('inventories');
     }
 };
