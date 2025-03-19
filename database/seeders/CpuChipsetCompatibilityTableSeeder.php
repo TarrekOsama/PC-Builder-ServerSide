@@ -13,7 +13,7 @@ class CpuChipsetCompatibilityTableSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('cpu_chipset_compatibility')->insert([
+        DB::table('cpu_chipset')->insert([
             ['cpu_id' => 1, 'chipset_id' => 1], // i9-13900K with Z790
             ['cpu_id' => 1, 'chipset_id' => 5], // i9-13900K with Z690
             ['cpu_id' => 2, 'chipset_id' => 3], // Ryzen 9 7950X with X670

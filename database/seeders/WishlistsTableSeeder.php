@@ -15,7 +15,7 @@ class WishlistsTableSeeder extends Seeder
     {
         Wishlist::create(['user_id' => 1, 'component_type' => 'cpu', 'component_id' => 2]);
         Wishlist::create(['user_id' => 2, 'component_type' => 'gpu', 'component_id' => 3]);
-        Wishlist::create(['user_id' => 3, 'component_type' => 'case', 'component_id' => 4]);
+        Wishlist::create(['user_id' => 3, 'component_type' => 'pc_case', 'component_id' => 4]);
         Wishlist::create(['user_id' => 4, 'component_type' => 'monitor', 'component_id' => 5]);
         Wishlist::create(['user_id' => 5, 'component_type' => 'ram', 'component_id' => 2]);
     }

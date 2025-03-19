@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('brand', 50);
             $table->string('form_factor', 10);
             $table->integer('wattage');
-            $table->string('efficiency_rating', 10);
+            $table->string('efficiency_rating', 50);
             $table->string('modularity', 20);
             $table->integer('pcie_6_2_pin')->default(0);
             $table->integer('eps_8_pin')->default(0);
